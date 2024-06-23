@@ -1,0 +1,27 @@
+{
+    "course1": {
+      "id": 1,
+      "name": "Course 1",
+      "instructor": "Instructor 1",
+      "description": "Description of Course 1",
+      "enrollmentStatus": "Open",
+      "duration": "10 weeks",
+      "schedule": "Mon-Wed-Fri",
+      "location": "Room 101",
+      "prerequisites": "None",
+      "syllabus": ["Topic 1", "Topic 2"]
+    },
+    "course2": {
+      "id": 2,
+      "name": "Course 2",
+      "instructor": "Instructor 2",
+      "description": "Description of Course 2",
+      "enrollmentStatus": "Closed",
+      "duration": "12 weeks",
+      "schedule": "Tue-Thu",
+      "location": "Room 202",
+      "prerequisites": "Basic knowledge",
+      "syllabus": ["Topic A", "Topic B"]
+    }
+  }
+  

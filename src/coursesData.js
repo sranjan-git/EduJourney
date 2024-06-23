@@ -1,0 +1,230 @@
+const courses = [
+  {
+    id: 1,
+    name: "Introduction to React",
+    instructor: "John Doe",
+    description: "Learn the basics of React framework, a popular JavaScript library for building user interfaces. This course covers the core concepts such as components, state, and props, and introduces modern features like hooks.",
+    enrollmentStatus: "Open",
+    duration: "4 weeks",
+    schedule: "Mon, Wed, Fri 10:00 AM - 12:00 PM",
+    location: "Online",
+    prerequisites: "Basic knowledge of HTML, CSS, and JavaScript.",
+    syllabus: [
+      "Week 1: Introduction to React",
+      "Week 2: Components and Props",
+      "Week 3: State and Lifecycle",
+      "Week 4: Hooks and Redux"
+    ],
+    thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg1MndL-Xp1JcnqaB0YOqTp6zDjrwYyGKsPA&s"
+  },
+  {
+    id: 2,
+    name: "Advanced React",
+    instructor: "Jane Smith",
+    description: "Dive deep into advanced React concepts and techniques. This course covers topics such as context API, higher-order components, render props, and performance optimization.",
+    enrollmentStatus: "Closed",
+    duration: "6 weeks",
+    schedule: "Tue, Thu 2:00 PM - 4:00 PM",
+    location: "Online",
+    prerequisites: "Introduction to React or equivalent knowledge.",
+    syllabus: [
+      "Week 1: Context API",
+      "Week 2: Higher-Order Components",
+      "Week 3: Render Props",
+      "Week 4: Hooks",
+      "Week 5: Performance Optimization",
+      "Week 6: Testing"
+    ],
+    thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg1MndL-Xp1JcnqaB0YOqTp6zDjrwYyGKsPA&s"
+  },
+  {
+    id: 3,
+    name: "JavaScript Essentials",
+    instructor: "Mike Johnson",
+    description: "Master the fundamentals of JavaScript, one of the most popular programming languages in the world. This course covers variables, data types, functions, scope, and more.",
+    enrollmentStatus: "Open",
+    duration: "5 weeks",
+    schedule: "Mon, Wed 1:00 PM - 3:00 PM",
+    location: "Classroom 101",
+    prerequisites: "Basic knowledge of HTML and CSS.",
+    syllabus: [
+      "Week 1: Variables and Data Types",
+      "Week 2: Functions and Scope",
+      "Week 3: Objects and Arrays",
+      "Week 4: Asynchronous JavaScript",
+      "Week 5: ES6+ Features"
+    ],
+    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+  },
+  {
+    id: 4,
+    name: "Full-Stack Web Development",
+    instructor: "Emily Davis",
+    description: "Become a full-stack web developer by learning both frontend and backend development. This comprehensive course covers HTML, CSS, JavaScript, Node.js, Express, MongoDB, and deployment techniques.",
+    enrollmentStatus: "In Progress",
+    duration: "12 weeks",
+    schedule: "Tue, Thu 10:00 AM - 1:00 PM",
+    location: "Online",
+    prerequisites: "JavaScript Essentials and basic knowledge of server-side programming.",
+    syllabus: [
+      "Week 1-3: Frontend Development",
+      "Week 4-6: Backend Development",
+      "Week 7-9: Databases",
+      "Week 10-12: Deployment and DevOps"
+    ],
+    thumbnail: "https://codingbytes.com/wp-content/uploads/2022/03/full-stack-web-development.jpg"
+  },
+  {
+    id: 5,
+    name: "Python for Data Science",
+    instructor: "Sophia Lee",
+    description: "Learn Python and its applications in data science. This course covers data structures, libraries for data science, data visualization, data analysis, and machine learning basics.",
+    enrollmentStatus: "Open",
+    duration: "8 weeks",
+    schedule: "Mon, Wed, Fri 3:00 PM - 5:00 PM",
+    location: "Online",
+    prerequisites: "Basic knowledge of programming.",
+    syllabus: [
+      "Week 1: Python Basics",
+      "Week 2: Data Structures",
+      "Week 3: Libraries for Data Science",
+      "Week 4: Data Visualization",
+      "Week 5: Data Analysis",
+      "Week 6: Machine Learning Basics",
+      "Week 7: Advanced Machine Learning",
+      "Week 8: Project"
+    ],
+    thumbnail: "https://w1.pngwing.com/pngs/835/530/png-transparent-python-logo-programming-language-computer-programming-python-programming-basics-for-absolute-beginners-scripting-language-source-code-php-code-climate-inc-thumbnail.png"
+  },
+  {
+    id: 6,
+    name: "UI/UX Design",
+    instructor: "Oliver Brown",
+    description: "Learn the principles of user interface and user experience design. This course covers user research, wireframing, prototyping, visual design, usability testing, and design systems.",
+    enrollmentStatus: "Closed",
+    duration: "6 weeks",
+    schedule: "Sat 9:00 AM - 12:00 PM",
+    location: "Design Studio",
+    prerequisites: "None.",
+    syllabus: [
+      "Week 1: Introduction to UI/UX",
+      "Week 2: User Research",
+      "Week 3: Wireframing and Prototyping",
+      "Week 4: Visual Design",
+      "Week 5: Usability Testing",
+      "Week 6: Design Systems"
+    ],
+    thumbnail: "https://moqod.com/static/img/ux-ui-00-2x.png"
+  },
+  {
+    id: 7,
+    name: "Cybersecurity Basics",
+    instructor: "Lucas Garcia",
+    description: "Understand the basics of cybersecurity and how to protect systems and data from cyber threats. This course covers cybersecurity fundamentals, threats and vulnerabilities, security measures, and incident response.",
+    enrollmentStatus: "Open",
+    duration: "4 weeks",
+    schedule: "Tue, Thu 4:00 PM - 6:00 PM",
+    location: "Classroom 202",
+    prerequisites: "Basic knowledge of computer networks.",
+    syllabus: [
+      "Week 1: Cybersecurity Fundamentals",
+      "Week 2: Threats and Vulnerabilities",
+      "Week 3: Security Measures",
+      "Week 4: Incident Response"
+    ],
+    thumbnail: "https://media.istockphoto.com/id/1335169133/vector/cyber-security-line-icon-shield-with-electronic-components-and-padlock.jpg?s=612x612&w=0&k=20&c=9Wb9umNUOwZm3_vZyt1cfHBxPKi-NIDyenBfJgO7C2M="
+  },
+  {
+    id: 8,
+    name: "Machine Learning with Python",
+    instructor: "Emma Wilson",
+    description: "Learn machine learning concepts and apply them using Python. This course covers supervised and unsupervised learning, model evaluation, feature engineering, neural networks, deep learning, and more.",
+    enrollmentStatus: "In Progress",
+    duration: "10 weeks",
+    schedule: "Mon, Wed 5:00 PM - 7:00 PM",
+    location: "Online",
+    prerequisites: "Python for Data Science or equivalent knowledge.",
+    syllabus: [
+      "Week 1: Introduction to Machine Learning",
+      "Week 2: Supervised Learning",
+      "Week 3: Unsupervised Learning",
+      "Week 4: Model Evaluation",
+      "Week 5: Feature Engineering",
+      "Week 6: Neural Networks",
+      "Week 7: Deep Learning",
+      "Week 8: Natural Language Processing",
+      "Week 9: Computer Vision",
+      "Week 10: Final Project"
+    ],
+    thumbnail: "https://static.vecteezy.com/system/resources/previews/003/504/819/non_2x/brain-and-artificial-intelligence-line-icon-brain-innovation-logo-illustration-free-vector.jpg"
+  },
+  {
+    id: 9,
+    name: "Introduction to Cloud Computing",
+    instructor: "William Martinez",
+    description: "Get started with cloud computing concepts and platforms. This course covers cloud service models, cloud providers, cloud security, and cloud deployment models.",
+    enrollmentStatus: "Open",
+    duration: "5 weeks",
+    schedule: "Fri 2:00 PM - 5:00 PM",
+    location: "Online",
+    prerequisites: "Basic knowledge of computer systems.",
+    syllabus: [
+      "Week 1: Cloud Computing Basics",
+      "Week 2: Cloud Service Models",
+      "Week 3: Cloud Providers",
+      "Week 4: Cloud Security",
+      "Week 5: Cloud Deployment Models"
+    ],
+    thumbnail: "https://png.pngtree.com/element_our/sm/20180410/sm_5acd1797b5783.jpg"
+  },
+  {
+    id: 10,
+    name: "Data Structures and Algorithms",
+    instructor: "Charlotte White",
+    description: "Learn fundamental data structures and algorithms. This course covers arrays, linked lists, stacks, queues, trees, graphs, sorting algorithms, searching algorithms, and algorithmic complexity.",
+    enrollmentStatus: "Closed",
+    duration: "8 weeks",
+    schedule: "Tue, Thu 1:00 PM - 3:00 PM",
+    location: "Classroom 303",
+    prerequisites: "Basic knowledge of programming.",
+    syllabus: [
+      "Week 1: Introduction to Data Structures",
+      "Week 2: Arrays and Linked Lists",
+      "Week 3: Stacks and Queues",
+      "Week 4: Trees",
+      "Week 5: Graphs",
+      "Week 6: Sorting Algorithms",
+      "Week 7: Searching Algorithms",
+      "Week 8: Algorithmic Complexity"
+    ],
+    thumbnail: "https://www.vagdevitechnologies.com/wp-content/uploads/2022/12/data-structures-and-algorithms.jpg"
+  },
+  {
+    id: 11,
+    name: 'Introduction to React Native',
+    instructor: 'John Doe',
+    description: 'Course description...',
+    enrollmentStatus: 'Open',
+    duration: '3 months',
+    schedule: 'Monday, Wednesday, Friday',
+    location: 'Online',
+    prerequisites: 'Some requirements...',
+    syllabus: ['Week 1: Introduction', 'Week 2: Advanced Topics', '...'],
+    thumbnail: "https://devtop.io/wp-content/uploads/2022/10/react-native-1.png"
+  },
+  {
+    id: 12,
+    name: 'Introduction to Kubernetes',
+    instructor: 'Shaurya Jaiswal',
+    description: 'Course description...',
+    enrollmentStatus: 'Open',
+    duration: '6 months',
+    schedule: 'Monday, Wednesday, Friday', 
+    location: 'Online',
+    prerequisites: 'Some requirements...',
+    syllabus: ['Week 1: Introduction', 'Week 2: Advanced Topics', '...'],
+    thumbnail: "https://www.ibm.com/content/dam/adobe-cms/instana/media_logo/Kubernetes.component.complex-narrative-xl.ts=1713771569035.png/content/adobe-cms/us/en/products/instana/supported-technologies/kubernetes-monitoring/_jcr_content/root/table_of_contents/body/content_section_styled/content-section-body/complex_narrative/logoimage"
+  },
+];
+
+export default courses;
