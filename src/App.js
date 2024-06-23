@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CourseList from "./components/courseList/CourseList";
 import CourseDetails from "./components/courseDetail/CourseDetails";
-import StudentDashboard from "./components/StudentDashboard";
+import StudentDashboard from "./dashboard/StudentDashboard";
 
 function App() {
   return (

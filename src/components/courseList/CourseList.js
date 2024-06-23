@@ -1,14 +1,31 @@
-// src/components/CourseList.js
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import coursesData from "../../coursesData";
 import './CourseList.css';
-
+import { database } from "../../firebase/firebase";
+import { ref, get } from "firebase/database";
 
 const CourseList = () => {
-  const [courses, setCourses] = useState(coursesData);
+  const [courses, setCourses] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    const fetchCourses = async () => {
+      const coursesRef = ref(database, 'courses');
+      try {
+        const snapshot = await get(coursesRef);
+        if (snapshot.exists()) {
+          const coursesData = Object.values(snapshot.val());
+          setCourses(coursesData);
+        } else {
+          console.error('No courses data found');
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchCourses();
+  }, []);
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
@@ -51,77 +68,3 @@ const CourseList = () => {
 };
 
 export default CourseList;
-
-
-
-
-
-
-// // src/components/CourseList.js
-// // src/components/CourseList.js
-// import React, { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
-// import { ref, onValue } from 'firebase/database';
-// import { database } from '../firebase'; // Import Firebase database
-// import './CourseList.css';
-
-// const CourseList = () => {
-//   const [courses, setCourses] = useState([]);
-//   const [searchTerm, setSearchTerm] = useState('');
-
-//   useEffect(() => {
-//     const fetchCourses = async () => {
-//       const coursesRef = ref(database, 'courses');
-//       onValue(coursesRef, (snapshot) => {
-//         const data = snapshot.val();
-//         if (data) {
-//           const fetchedCourses = Object.keys(data).map(key => ({
-//             id: key,
-//             ...data[key]
-//           }));
-//           setCourses(fetchedCourses);
-//         }
-//       });
-//     };
-
-//     fetchCourses();
-//   }, []);
-
-//   const filteredCourses = courses.filter(course =>
-//     course.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-//     course.instructor.toLowerCase().includes(searchTerm.toLowerCase())
-//   );
-
-//   return (
-//     <div className="course-list-container">
-//       <div className="search-bar">
-//         <input
-//           type="text"
-//           placeholder="Search by course name or instructor"
-//           value={searchTerm}
-//           onChange={e => setSearchTerm(e.target.value)}
-//         />
-//       </div>
-//       <div className="course-list">
-//         {filteredCourses.map(course => (
-//           <div key={course.id} className="course-card">
-//             <img src={course.thumbnail} alt={course.name} className="course-thumbnail" />
-//             <div className="course-info">
-//               <h5>{course.name}</h5>
-//               <p>Instructor: {course.instructor}</p>
-//               <Link to={`/courses/${course.id}`} className="btn btn-primary">
-//                 View Details
-//               </Link>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//       <div className="dashboard-button">
-//         <Link to="/dashboard" className="btn btn-primary">Go to Dashboard</Link>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default CourseList;
-

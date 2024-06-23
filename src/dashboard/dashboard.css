@@ -1,0 +1,21 @@
+.container {
+  margin-top: 20px;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-group-item h5 {
+  margin-bottom: 5px;
+}
+
+.list-group-item p {
+  margin: 0;
+}
+
+.btn-primary {
+  margin-left: 10px;
+}

@@ -1,13 +1,52 @@
-// src/components/CourseDetails.js
-
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import courses from "../../coursesData"; // Import your courses data
-import './CourseDetails.css'; // Import custom CSS
+import './CourseDetails.css';
+import { database } from "../../firebase/firebase";
+import { ref, get } from "firebase/database";
 
 const CourseDetails = () => {
+  const [course, setCourse] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
   const { id } = useParams();
-  const course = courses.find(course => course.id === parseInt(id));
+
+  useEffect(() => {
+    const fetchCourseData = async () => {
+      console.log(`Fetching data for course ID: ${id}`);
+      const coursesRef = ref(database, 'courses');
+      try {
+        const snapshot = await get(coursesRef);
+        if (snapshot.exists()) {
+          const coursesData = snapshot.val();
+          const foundCourse = coursesData.find(course => course.id === parseInt(id, 10));
+          if (foundCourse) {
+            console.log("Course data fetched successfully:", foundCourse);
+            setCourse(foundCourse);
+          } else {
+            setError(`No data found for course ID: ${id}`);
+          }
+        } else {
+          setError('No courses data found');
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCourseData();
+  }, [id]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   if (!course) {
     return <div>Course not found</div>;
   }
@@ -31,7 +70,7 @@ const CourseDetails = () => {
           <div className="course-syllabus">
             <strong>Syllabus:</strong>
             <ul>
-              {course.syllabus.map((item, index) => (
+              {course.syllabus && course.syllabus.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
@@ -43,60 +82,3 @@ const CourseDetails = () => {
 };
 
 export default CourseDetails;
-
-
-
-
-// // src/components/CourseDetails.js
-// import React, { useEffect, useState } from 'react';
-// import { useParams } from 'react-router-dom';
-// import { database } from '../firebase';
-// import './CourseDetails.css';
-
-// const CourseDetails = () => {
-//   const { id } = useParams();
-//   const [course, setCourse] = useState(null);
-
-//   useEffect(() => {
-//     const fetchCourse = async () => {
-//       try {
-//         const snapshot = await database.ref(`courses/${1}`).once('123');
-//         const data = snapshot.val();
-//         if (data) {
-//           setCourse(data);
-//         }
-//       } catch (error) {
-//         console.error('Error fetching course:', error);
-//       }
-//     };
-
-//     fetchCourse();
-//   }, [id]);
-
-//   if (!course) {
-//     return <div>Loading...</div>;
-//   }
-
-//   return (
-//     <div className="rcourse-details-containe">
-//       <h1>{course.name}</h1>
-//       <p><strong>Instructor:</strong> {course.instructor}</p>
-//       <p><strong>Description:</strong> {course.description}</p>
-//       <p><strong>Enrollment Status:</strong> {course.enrollmentStatus}</p>
-//       <p><strong>Duration:</strong> {course.duration}</p>
-//       <p><strong>Schedule:</strong> {course.schedule}</p>
-//       <p><strong>Location:</strong> {course.location}</p>
-//       <p><strong>Pre-requisites:</strong> {course.prerequisites}</p>
-//       <div className="syllabus">
-//         <h3>Syllabus</h3>
-//         <ul>
-//           {course.syllabus.map((item, index) => (
-//             <li key={index}>{item}</li>
-//           ))}
-//         </ul>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default CourseDetails;
