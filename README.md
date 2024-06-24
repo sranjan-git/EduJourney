@@ -1,8 +1,4 @@
-# Video Demo
 
-Watch the video below:
-
-[![Watch the video](https://www.youtube.com/watch?v=kfXy4W0aD40)
 
 
 
