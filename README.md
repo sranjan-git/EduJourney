@@ -1,5 +1,11 @@
 
 
+<video width="320" height="240" controls>
+  <source src="https://github.com/sranjan-git/EduJourney/blob/main/Screen%20Recording%202024-06-24%20at%206.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
 
 
 # Getting Started with Create React App
