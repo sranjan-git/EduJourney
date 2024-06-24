@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project Demo
+
+https://github.com/sranjan-git/EduJourney/assets/86006320/be411143-94ca-41c1-89a7-a490d43d61a5
+
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -69,9 +74,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-## Project Demo
-
-https://github.com/sranjan-git/EduJourney/assets/86006320/be411143-94ca-41c1-89a7-a490d43d61a5
 
 
 
