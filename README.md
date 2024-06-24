@@ -1,12 +1,3 @@
-[![Demo of the project]
-
-<video width="320" height="240" controls>
-  <source src="https://github.com/sranjan-git/EduJourney/blob/main/Screen%20Recording%202024-06-24%20at%206.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-
-
 
 # Getting Started with Create React App
 
@@ -78,3 +69,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### `npm run build` fails to minify
+
+
+<video width="320" height="240" controls>
+  <source src="https://github.com/sranjan-git/EduJourney/blob/main/Screen%20Recording%202024-06-24%20at%206.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
