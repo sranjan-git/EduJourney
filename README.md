@@ -71,9 +71,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## Project Demo
 
-Here is a demo of the project:
+https://github.com/sranjan-git/EduJourney/assets/86006320/be411143-94ca-41c1-89a7-a490d43d61a5
 
-<video width="640" height="480" controls>
-  <source src="https://github.com/sranjan-git/EduJourney/blob/main/Screen%20Recording%202024-06-24%20at%206.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+
+
+
+
+
+
+
+
