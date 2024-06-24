@@ -1,3 +1,6 @@
+![Video Title]([Screen Recording 2024-06-24 at 6.mp4](https://github.com/sranjan-git/EduJourney/blob/main/Screen%20Recording%202024-06-24%20at%206.mp4))
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
