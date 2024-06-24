@@ -19,3 +19,13 @@
 .btn-primary {
   margin-left: 10px;
 }
+
+/* Additional styles for proper alignment */
+.list-group-item .content {
+  flex: 1;
+}
+
+.list-group-item .button-container {
+  display: flex;
+  align-items: center;
+}

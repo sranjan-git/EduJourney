@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import './dashboard.css'; // Ensure you have the necessary styles
+import './dashboard.css'; // Ensure you have the necessary styles
 
 const StudentDashboard = () => {
   const dispatch = useDispatch();
@@ -17,15 +17,15 @@ const StudentDashboard = () => {
       <ul className="list-group mt-3">
         {enrolledCourses.map((course) => (
           <li key={course.id} className="list-group-item">
-            <div className="d-flex justify-content-between align-items-center">
+            <div className="content">
+              <h5>{course.name}</h5>
+              <p>Instructor: {course.instructor}</p>
+              <p>Due Date: {course.dueDate || "No due date"}</p>
               <div>
-                <h5>{course.name}</h5>
-                <p>Instructor: {course.instructor}</p>
-                <p>Due Date: {course.dueDate || "No due date"}</p>
-                <div>
-                  Progress: <progress value={completedCourses.includes(course.id) ? 100 : 0} max="100"></progress>
-                </div>
+                Progress: <progress value={completedCourses.includes(course.id) ? 100 : 0} max="100"></progress>
               </div>
+            </div>
+            <div className="button-container">
               <button
                 className="btn btn-primary"
                 onClick={() => markAsCompleted(course.id)}

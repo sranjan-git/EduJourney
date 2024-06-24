@@ -4,6 +4,7 @@ import './CourseList.css';
 import { database } from "../../firebase/firebase";
 import { ref, get } from "firebase/database";
 
+
 const CourseList = () => {
   const [courses, setCourses] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
