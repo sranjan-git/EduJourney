@@ -1,4 +1,9 @@
-![Video Title]([Screen Recording 2024-06-24 at 6.mp4](https://github.com/sranjan-git/EduJourney/blob/main/Screen%20Recording%202024-06-24%20at%206.mp4))
+# Video Demo
+
+Watch the video below:
+
+[![Watch the video](https://www.youtube.com/watch?v=kfXy4W0aD40)
+
 
 
 # Getting Started with Create React App
