@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import './dashboard.css'; // Ensure you have the necessary styles
+import './dashboard.css'; 
 
 const StudentDashboard = () => {
   const dispatch = useDispatch();
